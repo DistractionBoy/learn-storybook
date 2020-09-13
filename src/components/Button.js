@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   background-color: ${({ type, backgroundColor, theme: { palette } }) =>
     determineBackgroundColor(type, backgroundColor, palette)};
   border: ${({ type, theme }) =>
-    type === "primary" ? "none" : "1px solid " + theme.palette.primary};
+    type === "primary" ? "none" : "5px solid " + theme.palette.primary};
   border-radius: 6px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.21);
 
