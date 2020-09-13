@@ -34,10 +34,10 @@ const StyledButton = styled.button`
   border: ${({ type, theme }) =>
     type === "primary" ? "none" : "1px solid " + theme.palette.primary};
   border-radius: 6px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.21);
 
   &:hover {
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.38);
   }
 
   &:active {
