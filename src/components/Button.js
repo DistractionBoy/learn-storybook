@@ -53,7 +53,7 @@ const StyledButton = styled.button`
   &:disabled {
     color: ${({ type }) => (type === "primary" ? "#FFFFFF" : "#8E8E8E")};
     background-color: ${({ type }) =>
-      type === "primary" ? "#939393" : "#E3E3E3"};
+      type === "primary" ? "#949494" : "#E3E3E3"};
     border: none;
     cursor: not-allowed;
   }
