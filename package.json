@@ -46,6 +46,7 @@
     "@storybook/node-logger": "^6.0.21",
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.21",
+    "chromatic": "^5.1.0",
     "react-is": "^16.13.1",
     "storybook-addon-designs": "^5.4.1",
     "storybook-zeplin": "^1.1.3"
