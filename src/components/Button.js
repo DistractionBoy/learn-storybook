@@ -2,18 +2,37 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+const determineColor = (type, textColor, palette) => {
+  console.log("color is", textColor);
+  if (textColor && textColor.length >= 3) {
+    return `${textColor}`;
+  } else if (type === "primary") {
+    return palette.contrastText;
+  } else if (type === "secondary") {
+    return palette.primary;
+  }
+};
+
+const determineBackgroundColor = (type, textColor, palette) => {
+  if (textColor && textColor.length >= 3) {
+    return `${textColor}`;
+  } else if (type === "primary") {
+    return palette.primary;
+  } else if (type === "secondary") {
+    return palette.contrastText;
+  }
+};
+
 const StyledButton = styled.button`
-  margin: 1rem;
-  padding: 1rem 1.5rem;
-  pointer: cursor;
-  color: ${(props) =>
-    props.color === "primary" ? "#ffffff" : props.theme.palette.primary};
-  background-color: ${(props) =>
-    props.color === "primary" ? props.theme.palette.primary : "transparent"};
-  border: ${(props) =>
-    props.color === "primary"
-      ? "none"
-      : "1px solid " + props.theme.palette.primary};
+  margin: 16px;
+  padding: 10px 24px;
+  cursor: pointer;
+  color: ${({ type, textColor, theme: { palette } }) =>
+    determineColor(type, textColor, palette)};
+  background-color: ${({ type, backgroundColor, theme: { palette } }) =>
+    determineBackgroundColor(type, backgroundColor, palette)};
+  border: ${({ type, theme }) =>
+    type === "primary" ? "none" : "1px solid " + theme.palette.primary};
   border-radius: 6px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.21);
 
@@ -23,31 +42,38 @@ const StyledButton = styled.button`
 
   &:active {
     color: #fff;
-    background-color: ${({ color, theme }) =>
-      color === "primary" ? "#216021" : `${theme.palette.primary}`};
+    background-color: ${({ type, theme }) =>
+      type === "primary" ? "#216021" : `${theme.palette.primary}`};
+  }
+
+  &:focus {
+    outline: none;
   }
 
   &:disabled {
-    color: ${({ color }) => (color === "primary" ? "#FFFFFF" : "#8E8E8E")};
-    backgroundcolor: ${({ color }) =>
-      color === "primary" ? "#939393" : "#E3E3E3"};
+    color: ${({ type }) => (type === "primary" ? "#FFFFFF" : "#8E8E8E")};
+    background-color: ${({ type }) =>
+      type === "primary" ? "#939393" : "#E3E3E3"};
     border: none;
+    cursor: not-allowed;
   }
 `;
 
-export const Button = ({ label, ...props }) => (
-  <StyledButton type="button" {...props}>
-    {label}
-  </StyledButton>
+const Button = ({ children, ...props }) => (
+  <StyledButton {...props}>{children}</StyledButton>
 );
 
 Button.propTypes = {
-  primary: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  textColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  label: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  color: "primary",
+  type: "primary",
   onClick: undefined,
 };
+
+export default Button;

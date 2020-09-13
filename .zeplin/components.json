@@ -1,5 +1,56 @@
 {
-  "projects": [],
-  "styleguides": ["5f4e4a60a5122011cf8cfd5f"],
-  "components": []
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        },
+        {
+            "name": "@zeplin/cli-connect-storybook-plugin",
+            "config": {
+                "url": "http://localhost:6006",
+                "startScript": "storybook"
+            }
+        }
+    ],
+    "projects": [],
+    "styleguides": [
+        "5f4e4a60a5122011cf8cfd5f"
+    ],
+    "components": [
+        {
+            "path": "src/components/Button.js",
+            "zeplinNames": [
+                "Button/secondary/hover",
+                "Button/secondary/pressed",
+                "Button/primary/disabled",
+                "Button/secondary/disabled",
+                "Button/primary/primitive",
+                "Button/secondary/primitive",
+                "Button/primary/pressed",
+                "Button/primary/hover"
+            ]
+        },
+        {
+            "path": "src/components/Avatar.js",
+            "zeplinNames": [
+                "Avatar/online/lg",
+                "Avatar/offline/lg",
+                "Avatar/offline/md",
+                "Avatar/online/md",
+                "Avatar/offline/sm",
+                "Avatar/online/sm"
+            ]
+        },
+        {
+            "path": "src/components/Typography.js",
+            "zeplinNames": [
+                "Typography/h3",
+                "Typography/h2",
+                "Typography/h4",
+                "Typography/h1",
+                "Typography/h5",
+                "Typography/button",
+                "Typography/paragraph"
+            ]
+        }
+    ]
 }
