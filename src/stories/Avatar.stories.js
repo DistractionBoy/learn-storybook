@@ -44,16 +44,34 @@ Large.args = {
   src: "https://avatars2.githubusercontent.com/u/132554",
 };
 
+Large.parameters = {
+  docs: {
+    storyDescription: "The large size: 60px with a 16px margin",
+  },
+};
+
 export const Medium = Template.bind({});
 Medium.args = {
   size: "medium",
   src: "https://avatars2.githubusercontent.com/u/132554",
 };
 
+Large.parameters = {
+  docs: {
+    storyDescription: "The medium size: 45px with a 12px margin",
+  },
+};
+
 export const Small = Template.bind({});
 Small.args = {
   size: "small",
   src: "https://avatars2.githubusercontent.com/u/132554",
+};
+
+Large.parameters = {
+  docs: {
+    storyDescription: "The small size: 32px with an 8px margin",
+  },
 };
 
 export const All = () => (

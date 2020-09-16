@@ -48,10 +48,26 @@ const Message = ({
 );
 
 Message.propTypes = {
+  /**
+   * The name of the sender of the message
+   */
   sentFrom: PropTypes.string.isRequired,
+  /**
+   * The message content
+   */
   message: PropTypes.string.isRequired,
+  /**
+   * If the message has been read, this will be the date object for when it was
+   */
   seenAt: PropTypes.object.isRequired,
-  avatarImgSrc: PropTypes.string.isRequired,
+  /**
+   * The size of the avatar in the message
+   */
+  avatarSize: PropTypes.string.isRequired,
+  /**
+   * If the avatar photo is not supplied, the initials of the username is used
+   */
+  avatarUsername: PropTypes.string.isRequired,
 };
 
 export default Message;

@@ -64,10 +64,25 @@ const Button = ({ children, ...props }) => (
 );
 
 Button.propTypes = {
+  /**
+   * Whether it is a primary or secondary button, with colors based on the theme
+   */
   type: PropTypes.string,
+  /**
+   * An arbitrary color for the text inside the button
+   */
   textColor: PropTypes.string,
+  /**
+   * An arbitrary color for the space around the text (background-color)
+   */
   backgroundColor: PropTypes.string,
+  /**
+   * If the button has a label other than the text inside the button, use this property
+   */
   label: PropTypes.string,
+  /**
+   * A function to fire when the button is clicked
+   */
   onClick: PropTypes.func,
 };
 

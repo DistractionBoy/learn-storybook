@@ -61,11 +61,23 @@ Primary.args = {
   disabled: false,
 };
 
+Primary.parameters = {
+  docs: {
+    storyDescription: "When the button type = 'primary'",
+  },
+};
+
 export const Secondary = Template.bind({});
 Secondary.args = {
   type: "secondary",
   children: "BUTTON",
   disabled: false,
+};
+
+Secondary.parameters = {
+  docs: {
+    storyDescription: "When the button type = 'secondary'",
+  },
 };
 
 export const PrimaryDisabled = Template.bind({});
@@ -75,11 +87,25 @@ PrimaryDisabled.args = {
   disabled: true,
 };
 
+PrimaryDisabled.parameters = {
+  docs: {
+    storyDescription:
+      "When the button type = 'primary' and the button is disabled",
+  },
+};
+
 export const SecondaryDisabled = Template.bind({});
 SecondaryDisabled.args = {
   type: "secondary",
   children: "BUTTON",
   disabled: true,
+};
+
+SecondaryDisabled.parameters = {
+  docs: {
+    storyDescription:
+      "When the button type = 'primary' and the button is disabled",
+  },
 };
 
 export const All = () => (

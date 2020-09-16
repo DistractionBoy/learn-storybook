@@ -77,5 +77,12 @@ const Typography = ({ variant, ...props }) => {
 export default Typography;
 
 Typography.propTypes = {
+  /**
+   * The type of text element to be used
+   */
   variant: PropTypes.string,
+};
+
+Typography.defaultProps = {
+  variant: "p",
 };
