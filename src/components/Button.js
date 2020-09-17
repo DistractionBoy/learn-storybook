@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   background-color: ${({ type, backgroundColor, theme: { palette } }) =>
     determineBackgroundColor(type, backgroundColor, palette)};
   border: ${({ type, theme }) =>
-    type === "primary" ? "none" : "1px solid " + theme.palette.primary};
+    type === "primary" ? "none" : "5px solid " + theme.palette.primary};
   border-radius: 6px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.21);
 
@@ -53,7 +53,7 @@ const StyledButton = styled.button`
   &:disabled {
     color: ${({ type }) => (type === "primary" ? "#FFFFFF" : "#8E8E8E")};
     background-color: ${({ type }) =>
-      type === "primary" ? "#939393" : "#E3E3E3"};
+      type === "primary" ? "#949494" : "#E3E3E3"};
     border: none;
     cursor: not-allowed;
   }
